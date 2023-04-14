@@ -1,0 +1,20 @@
+I have completed the introduction folder.
+
+
+In which Mentor, has shared Course content, 
+timeline path, who can join this course or who do not need to join this course.
+
+Content includes:
+
+- Apache Spark 
+- Databricks 
+- Azure Databricks
+- Components of Spark
+- Clusters
+- Databricks Notebooks
+- Data Lake
+- Data Ingestion
+- Filters and Joins
+- Aggregations
+- Incremental Load
+- Azure Data Factory

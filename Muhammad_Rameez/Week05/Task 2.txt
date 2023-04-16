@@ -1,0 +1,12 @@
+I have learned how to create clusters 
+
+Setting the value for free tier 
+Setting the values for auto stop clusters
+
+
+
+After completing the video I have experiment on databricks to do it 
+my self and i got succeed
+
+
+Task 02 Done

@@ -1,0 +1,12 @@
+Apache Spark is a distributed computing framework designed to process large-scale data processing tasks in parallel across a cluster of computers. 
+It was developed by Apache Software Foundation and is open source. Spark provides a fast and flexible way to perform batch processing, streaming, 
+machine learning, and graph processing tasks.
+
+Spark can process data from a variety of data sources, including Hadoop Distributed File System (HDFS), Apache Cassandra, Apache HBase, and Amazon S3. 
+It uses a data structure called Resilient Distributed Datasets (RDDs) to store and manipulate data in memory, enabling fast processing of large datasets.
+
+Spark also offers a rich set of APIs for programming in various languages such as Java, Scala, Python, and R, which makes it accessible to a wide range of developers. 
+With its powerful features and broad range of use cases, Apache Spark has become one of the most popular big data processing frameworks in use today.
+
+
+

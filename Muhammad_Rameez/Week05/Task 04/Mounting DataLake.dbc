@@ -1,0 +1,38 @@
+Completed 
+
+
+So far what we have experienced
+== === == Sum up Part === = === = == 
+
+
+- Created Notebook
+- Created Cluster
+- Created Azure Storage Account
+- Created Azure Secret 
+- Created Key Vault
+
+
+=>  created secrets of client id, client secret, tenent id
+
+=>  go to databricks 
+
+=>  type secrets/createScope after the url, Press enter
+
+=> Now, Create a scope allowing the access to the roles
+
+=> Go to the Notebook, while cluster runing type these commands
+
+|   dbutils.secrets.help()
+|   dbutils.secrets.listScope()
+|   dbutils.secrets.list("formula-secret")
+|   dbutils.secrets.get(scope= "formula-scope", key="databricks-app-client-Id")
+
+
+for i in dbutils.secrets.get(scope= "formula-scope", key="databricks-app-client-Id"):
+    print (i)
+
+
+dbutils.secrets.get(scope="formula-scope", key="databricks-app-tenent-Id")
+
+for x in dbutils.secrets.get(scope="formula-scope", key="databricks-app-tenent-Id"):
+    print(x)

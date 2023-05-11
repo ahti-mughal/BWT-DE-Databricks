@@ -1,0 +1,16 @@
+
+
+Content includes:
+
+- Apache Spark 
+- Databricks 
+- Azure Databricks
+- Components of Spark
+- Clusters
+- Databricks Notebooks
+- Data Lake
+- Data Ingestion
+- Filters and Joins
+- Aggregations
+- Incremental Load
+- Azure Data Factory

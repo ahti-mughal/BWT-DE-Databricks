@@ -1,0 +1,37 @@
+S3 (Simple Storage Service) -
+a scalable and highly available object storage service that allows you to store and
+retrieve data in various formats such as text, images, and videos.
+
+RDS (Relational Database Service) 
+a managed database service that makes it easy to set up, operate, and scale relational 
+databases such as MySQL, PostgreSQL, and SQL Server.
+
+Glue 
+an ETL (Extract, Transform, Load) service that makes it easy to prepare and load data
+from various sources into AWS data stores.
+
+Redshift
+a fully managed petabyte-scale data warehouse service that allows you to analyze
+data using standard SQL and BI (Business Intelligence) tools.
+
+IAM role (Identity and Access Management role) 
+a set of permissions that determine what actions a user or service can perform in AWS services.
+
+Crawler
+an AWS Glue component that automatically discovers and classifies data from various sources, 
+making it easier to analyze and query data.
+
+Athena 
+an interactive query service that allows you to analyze data in Amazon S3 using standard SQL queries.
+
+Quicksight
+a business analytics service that allows you to create interactive visualizations, perform ad hoc analysis,
+and share dashboards and reports with others.
+
+Lambda
+a serverless compute service that allows you to run code without provisioning or managing servers.
+
+EC2 (Elastic Compute Cloud) 
+a web service that provides resizable compute capacity in the cloud. EC2 instances can be used to 
+run a variety of workloads, including web and mobile applications.
+

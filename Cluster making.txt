@@ -1,0 +1,200 @@
+To develop the two microservices and compose them using Docker Compose, follow the steps below:
+
+Microservice-1 (PHP and MySQL):
+
+Create a new directory for your project and navigate to it.
+Inside the directory, create a new file named index.php and add the following code to display the welcome message:
+php
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+</head>
+<body>
+    <h1>Welcome to the Online Shopping Store!</h1>
+</body>
+</html>
+Create another file named products.php and add the following code to retrieve product details from the MySQL database:
+php
+Copy code
+<?php
+$servername = "mysql";
+$username = "root";
+$password = "password";
+$dbname = "products";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM products_table";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    echo "<h2>Product Details:</h2>";
+    echo "<table>";
+    echo "<tr><th>ID</th><th>Name</th><th>Price</th></tr>";
+    
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr><td>".$row["id"]."</td><td>".$row["name"]."</td><td>".$row["price"]."</td></tr>";
+    }
+    
+    echo "</table>";
+} else {
+    echo "No products found.";
+}
+
+$conn->close();
+?>
+Set up the MySQL database:
+Create a new file named docker-compose.yml and add the following code:
+yaml
+Copy code
+version: "3"
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: products
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+Create a directory named mysql-data in the same directory as docker-compose.yml.
+
+Run the following command to start the services:
+
+bash
+Copy code
+docker-compose up
+Access the Microservice-1 web application by opening http://localhost in your web browser. You should see the welcome message.
+
+To retrieve the product details, access http://localhost/products.php. You should see the product details if any are available.
+
+Microservice-2 (Python):
+
+Create a new directory for your Microservice-2 and navigate to it.
+Inside the directory, create a new file named app.py and add the following code to display the international brand product details:
+python
+Copy code
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/international-products')
+def get_international_products():
+    products = [
+        {"id": 1, "name": "Product 1", "brand": "Brand A"},
+        {"id": 2, "name": "Product 2", "brand": "Brand B"},
+        {"id": 3, "name": "Product 3", "brand": "Brand C"}
+    ]
+    return jsonify(products)
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
+Create a Dockerfile in the same directory and add the following code:
+dockerfile
+Copy code
+FROM python:3.9-slim-b
+
+
+
+
+User
+continue the dockerfile
+ChatGPT
+Certainly! Here's the continuation of the Dockerfile for Microservice-2 (Python):
+
+dockerfile
+Copy code
+FROM python:3.9-slim-buster
+
+WORKDIR /app
+
+COPY requirements.txt .
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+EXPOSE 5000
+
+CMD [ "python", "app.py" ]
+Create a requirements.txt file in the same directory and add the following content:
+makefile
+Copy code
+Flask==2.0.0
+Set up the Microservice-2 Docker configuration:
+Create a new file named docker-compose.yml and add the following code:
+yaml
+Copy code
+version: "3"
+services:
+  microservice2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: microservice2
+    restart: always
+    ports:
+      - "5000:5000"
+Run the following command to start the services:
+bash
+Copy code
+docker-compose up
+Access the Microservice-2 web application by opening http://localhost:5000/international-products in your web browser. You should see the JSON response with the international brand product details.
+Compose the Microservices using Docker Compose:
+
+Create a new directory for the Docker Compose setup and navigate to it.
+Create a new file named docker-compose.yml and add the following code to compose both microservices:
+yaml
+Copy code
+version: "3"
+services:
+  microservice1:
+    image: php:7.4-apache
+    container_name: microservice1
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./microservice1:/var/www/html
+
+  microservice2:
+    build:
+      context: ./microservice2
+      dockerfile: Dockerfile
+    container_name: microservice2
+    restart: always
+    ports:
+      - "5000:5000"
+Ensure that you have the following directory structure:
+markdown
+Copy code
+- docker-compose.yml
+- microservice1/
+  - index.php
+  - products.php
+- microservice2/
+  - app.py
+  - Dockerfile
+  - requirements.txt
+Run the following command to start both microservices:
+bash
+Copy code
+docker-compose up
+Access the Microservice-1 web application by opening http://localhost in your web browser. You should see the welcome message.
+
+To retrieve the product details from Microservice-1, access http://localhost/products.php. You should see the product details if any are available.
+
+Access the Microservice-2 web application by opening http://localhost:5000/international-products in your web browser. You should see the JSON response with the international brand product details.
+
+That's it! You have now developed and composed the two microservices using Docker Compose.

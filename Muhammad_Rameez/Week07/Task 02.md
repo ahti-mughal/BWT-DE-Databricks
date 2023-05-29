@@ -17,7 +17,7 @@ AWS 50 Services are :
 - Snow (without internet)
 - Container Registery
 - Container Services
-- Kubernaties (Capsule Data Package)
+- Kubernaties (Microservices Application Deployment)
 - Fradget
 - App Runner (Run Application)
 - S3 (Storage)

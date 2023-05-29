@@ -1,3 +1,5 @@
-### SQL HackerRank Advance
+What is the concept of Slowly changing dimensions (SCD)?
 
-![Portal Image](/Muhammad_Rameez/Week08/images/basicSQL.png)
+What are its types?
+Explain with examples (Scd1, Scd2, Scd3, Scd4).
+

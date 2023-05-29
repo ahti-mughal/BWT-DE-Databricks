@@ -1,0 +1,1 @@
+Load data from S3 to Amazon Redshift

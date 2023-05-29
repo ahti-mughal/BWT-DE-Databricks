@@ -1,3 +1,6 @@
-### SQL HackerRank Beginner
+Linux command 
 
-![Portal Image](/Muhammad_Rameez/Week08/images/basicSQL.png)
+### SQL HackerRank Advance
+
+![Portal Image](/Muhammad_Rameez/Week08/image/hackerrank.png)
+![Portal Image](/Muhammad_Rameez/Week08/image/sql.png)
